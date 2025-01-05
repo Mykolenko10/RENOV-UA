@@ -1,0 +1,1504 @@
+@import url(reset.css);
+
+.wrapper {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding: 2.5vw 5vw;
+    flex-direction: column;
+}
+
+@media (max-width: 1024px) {
+    .wrapper {
+        padding: 5vw;
+    }
+}
+
+.index__wrapper {
+    position: fixed;
+    background: url(../img/7709.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+.index__wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Черный цвет с прозрачностью 50% */
+    z-index: 1; /* Помещает слой поверх фона */
+}
+
+header {
+    position: relative;
+    width: 90vw;
+    justify-content: space-between;
+    color: white;
+    z-index: 3;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1vw;
+}
+
+nav:first-child {
+    padding-left: 3vw;
+}
+
+nav:last-child {
+    padding-right: 3vw;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 1vw;
+}
+
+.requestForACall {
+    font-size: 1.2vw;
+    color: orange;
+}
+
+.logo img {
+    width: 4vw;
+    height: 4vw;
+}
+
+nav::after {
+    content: "";
+    position: absolute;
+    bottom: 0; /* Расположение внизу */
+    left: 0;
+    width: 100%;
+    height: 1px; /* Толщина линии */
+    background-color: rgba(255, 255, 255, 0.4); /* Белая линия с прозрачностью */
+}
+
+.hamburger-menu {
+    display: flex; /* Скрываем бургер-меню по умолчанию */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 6vw;
+    height: 4vw; /* Высота бургер-меню 4% от ширины экрана */
+    cursor: pointer;
+    z-index: 4;
+}
+
+.bar {
+    height: 2px;  /* Толщина линий */
+    width: 100%;   /* Полная ширина бургер-меню */
+    background-color: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -50vw; /* Меню скрыто за пределами экрана */
+    width: 30vw;
+    height: 30vh; /* Занимает всю высоту экрана */
+    background-color: #1e1e1e;
+    transition: right 0.5s ease-in-out;
+    border-bottom-left-radius: 180px; /* Закругление нижнего левого угла */
+    z-index: 1000;
+    padding: 0 4vw;
+    display: flex;
+    justify-content: flex-start; /* Отображение контента сверху */
+}
+
+.side-menu.open {
+    right: 0; /* Меню теперь будет выезжать */
+}
+
+/* Кнопка закрытия */
+/* Основной стиль для крестика */
+.close-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 6vw; /* Ширина контейнера крестика */
+    height: 6vw; /* Высота контейнера крестика */
+    cursor: pointer;
+    position: relative; /* Для правильного позиционирования линий */
+    margin-top: 6vw;
+}
+
+.close-menu .close-line {
+    position: absolute;
+    background-color: #fff; /* Белый цвет линий */
+    width: 4vw; /* Длина линий */
+    height: 2px; /* Толщина линий */
+    border-radius: 5px;
+}
+
+.close-menu .close-line-1 {
+    transform: rotate(45deg);
+}
+
+.close-menu .close-line-2 {
+    transform: rotate(-45deg);
+}
+
+/* Стили для линий */
+.line {
+    position: absolute; /* Линии будут абсолютно позиционироваться в контейнере */
+    width: 6vw; /* Длина линии (4% от ширины экрана) */
+    height: 3px; /* Толщина линии */
+    background-color: white; /* Белый цвет линии */
+}
+
+/* Первая линия (горизонтальная) */
+.line-1 {
+    transform: rotate(45deg); /* Поворачиваем линию на 45 градусов */
+}
+
+/* Вторая линия (вертикальная) */
+.line-2 {
+    transform: rotate(-45deg); /* Поворачиваем линию на -45 градусов */
+}
+
+
+.side-nav {
+    display: flex;
+    flex-direction: column; /* Ссылки выстраиваются в колонку */
+    margin-bottom: 5vw;
+    margin-top: 8vw;
+    height: 20vh;
+    margin-left: auto;
+    text-align: center;
+    justify-content: space-between;
+}
+
+/* Стили для ссылок в боковом меню */
+.side-nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 2vw; /* Размер шрифта */
+    transition: color 0.3s ease;
+    display: block; /* Ссылки будут блоками, занимают всю ширину */
+}
+
+/* Активное состояние для ссылки */
+.side-menu .side-nav a:hover {
+    color: #007bff;
+}
+
+@media (max-width: 480px) {
+    nav {
+        display: flex; /* Используем flexbox */
+        justify-content: space-between; /* Разделяем элементы */
+        align-items: center; /* Выравниваем по вертикали */
+        padding: 0 10px; /* Отступы */
+    }
+
+    .logo {
+        display: flex;
+    }
+
+    .logo img {
+        height: 8vw;
+        width: 8vw;
+    }
+
+    .requestForACall {
+        flex: 2; /* Расширяем, чтобы было место для кнопки */
+        text-align: center; /* Центрируем кнопку по горизонтали */
+        display: block; /* Показываем кнопку */
+        font-size: 2.5vw;
+        letter-spacing: 0.2vw;
+    }
+
+    .hamburger-menu {
+        display: flex; /* Показываем бургер-меню только на маленьких экранах */
+    }
+
+    nav a {
+        display: none; /* Скрываем стандартные ссылки */
+    }
+
+    nav::after {
+        display: none;
+    }
+}
+
+@media (min-width: 481px) {
+    .hamburger-menu {
+        display: none; /* Скрываем бургер-меню на больших экранах */
+    }
+}
+
+
+
+
+
+
+main {
+    display: flex;
+    flex: 1;
+    z-index: 2;
+}
+
+
+
+
+
+.index__main {
+    justify-content: center;
+    align-items: center;
+}
+
+.indexSlogan {
+    position: absolute;
+    margin-top: -5vh;
+    color: white;
+    font-size: 5vw;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    text-align: center;
+    line-height: 1.3;
+    letter-spacing: 0.7vw;
+}
+
+
+
+
+
+.about__wrapper {
+    position: fixed;
+    background: url(../img/7710.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+.about__wrapper::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Черный цвет с прозрачностью 50% */
+    z-index: 1; /* Помещает слой поверх фона */
+}
+
+.about__main {
+    width: 90vw;
+    height: 100%;
+}
+
+.aboutText {
+    display: flex;
+    min-width: 33vw;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.3;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.aboutSlogan__white {
+    position: relative;
+    font-size: 4vw;
+    font-weight: 100;
+    color: white;
+    top: -5vh;
+}
+.aboutSlogan__orange {
+    position: relative;
+    font-size: 4vw;
+    font-weight: 1000;
+    color: #FF9900;
+    top: -5vh;
+}
+
+.aboutDiscription {
+    position: relative;
+    margin-top: 5vh;
+    font-size: 1.5vw;
+    line-height: 1.4;
+    color: white;
+    max-width: 30vw;
+    font-weight: 200;
+    top: -5vh;
+}
+
+@media (max-width: 1024px) {
+    .aboutDiscription {
+        font-size: 2.5vw;
+        top: 0;
+    }
+    .aboutSlogan__white {
+        top: 0;
+    }
+
+    .aboutSlogan__orange {
+        top: 0;
+    }
+}
+
+.about__img {
+    height: 100%; /* Всегда занимает 100% высоты родительского контейнера */
+    width: auto;  /* Ширина пропорциональна высоте */
+    max-width: 60vw; /* Максимальная ширина не больше 60% ширины экрана */
+    margin-left: auto;
+    margin-top: 2.5vh;
+    object-fit: cover;
+}
+
+.about__img img {
+    height: 80vh; /* Высота картинки равна высоте родительского контейнера */
+    width: auto;  /* Ширина подстраивается автоматически */
+}
+
+@media (max-width: 480px) {
+    /* Стиль для контейнера, чтобы он располагал элементы в столбик */
+    .about__main {
+        display: flex;
+        flex-direction: column; /* Включаем вертикальное выравнивание */
+        justify-content: flex-start; /* Расположение элементов сверху */
+        align-items: center; /* Выравнивание по центру */
+    }
+
+    /* Настройка для слогана, чтобы он был по центру */
+    .aboutSlogan {
+        text-align: center; /* Текст будет выровнен по центру */
+        margin-top: 4vh;
+    }
+    .aboutSlogan__white {
+        font-size: 7vw;
+        font-weight: 50;
+    }
+
+    .aboutSlogan__orange {
+        font-size: 7vw;
+    }
+
+    /* Настройка для описания */
+    .aboutDiscription {
+        font-size: 3vw;
+        text-align: center; /* Центрируем текст */
+        margin-top: 2vh; /* Отступ сверху */
+        max-width: 70vw; /* Максимальная ширина для текста */
+        line-height: 6vw;
+    }
+
+    /* Настройка для изображения */
+    .about__img {
+        width: 100%; /* Ширина 100% экрана */
+        max-width: 90vw; /* Максимальная ширина - 90% экрана */
+        height: 50vh; /* Высота 50% от высоты экрана (можно изменить по потребности) */
+        margin-top: 3vh; /* Отступ сверху */
+        display: flex; /* Используем flexbox для выравнивания */
+        justify-content: center; /* Центрируем изображение по горизонтали */
+        align-items: center; /* Центрируем по вертикали, если нужно */
+    }
+
+    /* Настройка для изображения */
+    .about__img img {
+        width: 100%; /* Картинка растягивается на всю ширину контейнера */
+        height: 100%; /* Высота картинки также будет 100% от высоты контейнера */
+
+    }
+}
+
+
+
+
+
+
+.rennovations__wrapper {
+    position: relative;
+    background: url(../img/771.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+.rennovations__wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Черный цвет с прозрачностью 50% */
+    z-index: 1; /* Помещает слой поверх фона */
+}
+
+.rennovations__main {
+    justify-content: center;
+    margin-top: 3vw;
+}
+
+#projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрует содержимое по горизонтали */
+    text-align: center;  /* Выравнивает текст по центру */
+}
+
+h1 {
+    color: #D9D9D9;
+    margin-bottom: 3vw;
+    font-size: 3vw;
+    letter-spacing: 1.5vw;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.gallery {
+    display: flex; /* Используем Flexbox */
+    flex-wrap: wrap; /* Позволяем элементам переноситься на новую строку */
+    gap: 3vw; /* Расстояние между элементами */
+    justify-content: center; /* Центрирование карточек в контейнере */
+    max-width: 90vw; /* Ограничиваем ширину галереи */
+    margin: 0 auto; /* Центрирование галереи */
+}
+
+.gallery:last-child {
+    margin-bottom: 0;
+    gap: 0;
+}
+
+.card {
+    height: 30vw; /* Фиксированная высота карточек */
+    overflow: hidden; /* Обрезка содержимого */
+    display: flex; /* Для правильного размещения изображения */
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Делаем ширину карточек гибкой */
+    max-width: 100%; /* Максимальная ширина 100% */
+}
+
+.card img {
+    width: 100%; /* Картинка растягивается по ширине карточки */
+    height: 100%; /* Картинка занимает всю высоту карточки */
+    object-fit: cover; /* Сохранение пропорций изображения */
+}
+
+/* Индивидуальные ширины для карточек */
+.card-1 {
+    width: 37vw;
+}
+
+.card-2 {
+    width: 50vw;
+}
+
+.card-3 {
+    width: 60vw;
+}
+
+.card-4 {
+    width: 27vw;
+}
+
+.card-5 {
+    width: 35vw;
+}
+
+.card-6 {
+    width: 52vw;
+}
+
+.card-7 {
+    width: 90vw;
+}
+
+#loadMore {
+    display: flex;
+    margin: 2.5vw 0;
+    color: #FFAC30;
+    font-size: 1.5vw;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 0.1vw;
+}
+
+.loadMoreUn {
+    padding-left: 1vw;
+    width: 1.5vw;
+    height: 1.5vw;
+}
+
+@media (max-width: 1024px) {
+    h1 {
+        margin-bottom: 6vw;
+        font-size: 3.5vw;
+    }
+
+    .rennovations__main {
+        margin-top: 6vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .rennovations__main {
+        margin-top: 8vw;
+    }
+
+    .rennovation-h1 {
+        margin-bottom: 8vw;
+        font-size: 5vw;
+    }
+
+    .gallery {
+        gap: 5vw;
+    }
+
+    .card {
+        height: 50vw;
+    }
+
+    .card-1,
+    .card-2,
+    .card-3,
+    .card-4,
+    .card-5,
+    .card-6,
+    .card-7 {
+        width: 90vw;
+    }
+
+    #loadMore {
+        font-size: 3vw;
+        margin: 5vw;
+    }
+
+    .loadMoreUn {
+        padding-left: 3vw;
+        width: 3vw;
+        height: 3vw;
+    }
+}
+
+
+
+
+
+.contact__wrapper {
+    position: fixed;
+    background: url(../img/7710.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+.contact__wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Черный цвет с прозрачностью 50% */
+    z-index: 1; /* Помещает слой поверх фона */
+}
+
+.contact__main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    z-index: 2;
+}
+
+.contact__h1 {
+    margin: 3vw 0;
+}
+
+.contact-content {
+    display: flex;
+    gap: 5vw; /* Расстояние между секциями */
+    justify-content: center; /* Центрируем содержимое */
+    align-items: flex-start; /* Выравнивание по верху */
+    flex-wrap: wrap; /* Чтобы содержимое переносилось на новые строки при малой ширине экрана */
+    width: 100%;
+    height: 100%;
+    max-width: 90vw; /* Ограничиваем ширину */
+}
+
+#contact-info,
+#contact-form {
+    flex: 1; /* Одинаковая ширина для секций */
+    width: 40vw; /* Максимальная ширина */
+}
+
+#contact-form {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100%; /* Занимает всю высоту родительского элемента */
+}
+
+#contact-form form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 4.8vh; /* Расстояние между элементами формы */
+    width: 100%;
+    align-items: flex-end; /* Поля располагаются справа */
+}
+
+#contact-form form input,
+#contact-form form textarea {
+    width: 35vw;
+    height: 4.5vh;
+    font-size: 1.5vh;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.1vw;
+    border-radius: 1vw;
+    padding: 0 1em;
+    border: 0.1em solid white; /* Тонкая светлая рамка */
+    background-color: rgba(0, 0, 0, 0); /* Чёрный фон с прозрачностью 50% */
+    color: white;
+    box-sizing: border-box;
+}
+
+#contact-form form textarea {
+    height: 9vh;
+    padding: 0.5em 1em;
+}
+
+#contact-form form button {
+    box-sizing: border-box;
+    position: relative;
+    width: 9vw;
+    height: 4vh;
+    color: white;
+    border-radius: 2em;
+    border: 0.1em solid white; /* Тонкая светлая рамка */
+    background-color: rgba(0, 0, 0, 0); /* Чёрный фон с прозрачностью 50% */
+    align-items: center;
+    font-size: 1.5vh;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 0.08vw;
+    font-weight: 400;
+    right: 13vw;
+}
+
+#contact-form form input::placeholder,
+#contact-form form textarea::placeholder {
+    color: white; /* Белый текст плейсхолдера */
+}
+
+#contact-form form input:hover,
+#contact-form form textarea:hover,
+#contact-form form button:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Меняем прозрачность фона при наведении */
+}
+
+#contact-form form input:focus,
+#contact-form form textarea:focus,
+#contact-form form button:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.2); /* Меняем прозрачность фона при наведении */
+}
+
+#contact-info {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* Центрируем содержимое по вертикали (оси Y) */
+    height: 100%;             /* Устанавливаем высоту 100% для родительского контейнера */
+}
+
+.info-text {
+    margin: 8vh 0;  /* Расстояние между строками текста */
+    font-size: 2vh;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    position: relative;   /* Для размещения линии под текстом */
+    display: flex; /* Используем flexbox для горизонтального выравнивания */
+    align-items: center; /* Выравниваем элементы по центру вертикально */
+    gap: 1vw; /* Добавляем отступ между картинкой и текстом */
+    letter-spacing: 0.2vh;
+}
+
+.info-text:first-child {
+    margin-top: 0;
+}
+
+.info-text::after {
+    content: "";               /* Создаем пустой псевдоэлемент */
+    position: absolute;        /* Абсолютное позиционирование относительно .info-text */
+    bottom: -3vh;             /* Расстояние от текста до линии */
+    left: 0;
+    width: 80%;               /* Линия растягивается на всю ширину родительского элемента */
+    height: 1px;               /* Толщина линии */
+    background-color: white;   /* Цвет линии */
+}
+
+.info-text img {
+    height: 1.8vw;
+    width: 1.8vw; /* Устанавливаем высоту картинки */
+    object-fit: contain; /* Сохраняем пропорции изображения */
+}
+
+.socials a {
+    display: inline-block; /* Убедимся, что иконки расположены в строку */
+    margin-right: 1.5vw; /* Расстояние между иконками */
+}
+
+.socials img {
+    height: 1.5vw; /* Устанавливаем высоту картинки */
+    object-fit: contain; /* Сохраняем пропорции изображения */
+}
+
+.socialMediasContact {
+    display: none;
+}
+
+/* Скрытие формы на экранах меньше 1024px */
+@media (max-width: 1024px) {
+    .contact__h1 {
+        margin-top: 6vw;
+        font-size: 3.5vw;
+    }
+
+    .socials {
+        display: none;
+    }
+
+    #contact-form {
+        display: none; /* Скрываем форму при ширине экрана меньше 1024px */
+    }
+
+    #contact-info {
+        align-items: center;
+    }
+
+    .info-text {
+        justify-content: center;
+        gap: 3vw;
+        margin: 13.5vh 0;
+        top: -2vh;
+    }
+
+    .info-text:last-child {
+        margin-bottom: 0;
+    }
+
+    .info-text img {
+        height: 3.5vw;
+        width: 3.5vw; /* Устанавливаем высоту картинки */
+        object-fit: contain; /* Сохраняем пропорции изображения */
+    }
+
+    .info-text::after {
+        bottom: -4vh;             /* Расстояние от текста до линии */
+        width: 100%;               /* Линия растягивается на всю ширину родительского элемента */
+        height: 1px;               /* Толщина линии */
+        background-color: white;   /* Цвет линии */
+    }
+
+    .socialMediasContact {
+        display: inline-block;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact__h1 {
+        margin-top: 8vw;
+        font-size: 5vw;
+    }
+
+    .info-text {
+        font-size: 2vw;
+        margin-top: 15vh;
+    }
+
+    .info-text img {
+        height: 4vw;
+        width: 4vw;
+    }
+    .info-phone,
+    .info-email,
+    .info-address {
+        font-size: 3vw;
+    }
+}
+
+
+
+
+
+.team__wrapper {
+    position: relative;
+    background: url(../img/779.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+.team__wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Черный цвет с прозрачностью 50% */
+    z-index: 1; /* Помещает слой поверх фона */
+}
+
+.team__main {
+    display: flex;
+    flex-direction: column;
+    text-align: center; /* Центрирование текста */
+    width: 100%;
+    justify-content: center; /* Центрирование по вертикали */
+    align-items: center; /* Центрирование по горизонтали */
+    margin: 0 auto; /* Центрирование контейнера */
+    margin-top: 3vw;
+}
+
+.team__main p {
+    font-size: 2vw; /* Примерный размер шрифта */
+    color: white;
+    max-width: 60%; /* Ограничиваем ширину параграфа, чтобы не растягивался по всей ширине */
+    margin: 0 auto; /* Центрирование параграфа */
+    letter-spacing: 0.2vw;
+    font-family: 'Inter', sans-serif; /* Применение шрифта Inter */
+    line-height: 3vw; /* Межстрочный интервал 65 пикселей */
+    font-weight: 250;
+    margin-bottom: 4vw;
+}
+
+.team-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 столбца */
+    gap: 5vw 0.5vw;
+    justify-content: center;
+    width: 75vw;
+    height: 100%;
+    align-items: end;
+}
+
+.team-member {
+    background-color: #4B4747;
+    text-align: center; /* Выравнивание текста по центру */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрирование содержимого по горизонтали */
+    width: 16vw; /* Ширина карточки */
+    height: 24vw; /* Высота карточки */
+    box-sizing: border-box; /* Учитываем padding в ширину/высоту */
+    border: 1vw solid #4B4747; /* Обводка вокруг карточки */
+    border-radius: 10px; /* Радиус для округления углов */
+}
+
+.owner {
+    width: 18vw;
+    height: 26vw;
+}
+
+.team-cards .team-member:nth-child(2),
+.team-cards .team-member:nth-child(5),
+.team-cards .team-member:nth-child(8) {
+    justify-self: center; /* Центрирование по горизонтали */
+}
+
+/* Выравнивание карточек по правому краю в третьем столбце */
+.team-cards .team-member:nth-child(3),
+.team-cards .team-member:nth-child(6),
+.team-cards .team-member:nth-child(9) {
+    justify-self: end; /* Выравнивание по правому краю */
+}
+
+.team-member img {
+    width: 14vw; /* Ширина изображения */
+    height: 22vw; /* Высота изображения */
+    object-fit: cover; /* Сохраняет пропорции изображения, обрезая его */
+    margin-bottom: 15px; /* Отступ между изображением и текстом */
+}
+
+.owner img {
+    width: 16vw;
+    height: 24vw;
+}
+
+.team-member h3 {
+    font-size: 1.2vw; /* Размер шрифта для имени */
+    margin-bottom: 0.5vw;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.1vw;
+}
+
+.team-member p {
+    font-size: 0.8vw; /* Размер шрифта для работы */
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    margin: 0;
+    line-height: 1vw;
+}
+
+@media (max-width: 1024px) {
+    .team__main {
+        margin-top: 6vw;
+    }
+
+    h1 {
+        margin-bottom: 4vw;
+    }
+
+    .team-member {
+        width: 20vw; /* Ширина карточки */
+        height: 30vw; /* Высота карточки */
+        border: 1vw solid #4B4747; /* Обводка вокруг карточки */
+    }
+    
+    .owner {
+        width: 24vw;
+        height: 34vw;
+    }
+
+    .team-member img {
+        width: 18vw; /* Ширина изображения */
+        height: 24vw; /* Высота изображения */
+        margin-bottom: 1vw; /* Отступ между изображением и текстом */
+    }
+    
+    .owner img {
+        width: 22vw;
+        height: 28vw;
+    }
+    
+    .team-member h3 {
+        font-size: 1.5vw; /* Размер шрифта для имени */
+        margin-bottom: 0.5vw;
+        font-weight: 400;
+        letter-spacing: 0.15vw;
+    }
+    
+    .team-member p {
+        font-size: 1vw; /* Размер шрифта для работы */
+        font-weight: 400;
+        line-height: 1vw;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Сначала делаем владельца (owner) на всю ширину */
+    .team-cards {
+        grid-template-columns: 1fr 1fr; /* Делаем 2 колонки */
+    }
+
+    .team-member.owner {
+        grid-column: span 2; /* Овнер занимает всю ширину */
+        order: -1; /* Перемещаем владельца первым */
+    }
+
+    .team__main {
+        margin-top: 8vw;
+    }
+
+    h1 {
+        margin-bottom: 8vw;
+    }
+
+    .team__main p {
+        font-size: 3vw;
+        letter-spacing: 0.3vw;
+        max-width: 72%;
+        line-height: 4vw;
+        margin-bottom: 8vw;
+    }
+
+    .team-cards {
+        gap: 10vw;
+    }
+
+    .team-member {
+        width: 30vw; /* Ширина карточки */
+        height: 42vw; /* Высота карточки */
+        border: 1vw solid #4B4747; /* Обводка вокруг карточки */
+    }
+    
+    .owner {
+        width: 38vw;
+        height: 54vw;
+    }
+
+    .team-member img {
+        width: 26vw; /* Ширина изображения */
+        height: 32vw; /* Высота изображения */
+        margin-bottom: 1vw; /* Отступ между изображением и текстом */
+        padding-top: 1vw;
+    }
+    
+    .owner img {
+        padding-top: 1vw;
+        width: 34vw;
+        height: 40vw;
+    }
+    
+    .team-member h3 {
+        font-size: 2.5vw; /* Размер шрифта для имени */
+        margin-bottom: 1vw;
+        font-weight: 400;
+        letter-spacing: 0.25vw;
+        margin-top: 1vw;
+    }
+    
+    .team-member p {
+        font-size: 1.5vw; /* Размер шрифта для работы */
+        font-weight: 400;
+        line-height: 1vw;
+    }
+
+    .owner h3 {
+        font-size: 3vw;
+        letter-spacing: 0.3vw;
+        margin-top: 2vw;
+    }
+
+    .owner p {
+        font-size: 2vw;
+        margin-top: 1.8vw;
+    }
+
+    .team-cards .team-member:nth-child(7),
+    .team-cards .team-member:nth-child(3),
+    .team-cards .team-member:nth-child(5),
+    .team-cards .team-member:nth-child(9) {
+        justify-self: flex-start; /* Карточки правого столбца прижимаются к левому краю */
+    }
+
+    .team-cards .team-member:nth-child(4),
+    .team-cards .team-member:nth-child(1),
+    .team-cards .team-member:nth-child(6),
+    .team-cards .team-member:nth-child(8) {
+        justify-self: flex-end; /* Карточки левого столбца прижимаются к правому краю */
+    }
+}
+
+
+
+
+
+
+.stageOfWork__wrapper {
+    position: fixed;
+    background: url(../img/7710.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+.stageOfWork__wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Черный цвет с прозрачностью 50% */
+    z-index: 1; /* Помещает слой поверх фона */
+}
+
+/* Основной контейнер */
+/* Основной контейнер */
+.stages-container {
+    margin-top: 4vh;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+  
+  /* Карточки */
+.stages {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 90vw;
+    height: 100%;
+}
+  
+.stage {
+    padding-top: 2vw;
+    position: relative;
+    border: 1px solid white;
+    box-sizing: border-box;
+}
+
+.stage__text {
+    display: flex;
+    align-items: center; /* Выравнивание по вертикали */
+    gap: 2vw; /* Отступ между картинкой и текстом */
+    margin-bottom: 3vw;
+}
+
+.stage:nth-child(2),
+.stage:nth-child(3),
+.stage:nth-child(5),
+.stage:nth-child(6) {
+    padding-left: 4vw; /* Отступ справа */
+}
+
+.stage:nth-child(-n+3) {
+    border-top: none;
+}
+  
+  /* Убираем нижнюю рамку у нижнего ряда */
+.stage:nth-child(n+4) {
+    border-bottom: none;
+}
+  
+  /* Убираем левую рамку у первого столбца */
+.stage:nth-child(3n+1) {
+    border-left: none;
+}
+  
+  /* Убираем правую рамку у последнего столбца */
+.stage:nth-child(3n) {
+    border-right: none;
+}
+  
+  /* Иконки внутри карточек */
+.stage img {
+    height: 6vw;
+    width: auto;
+}
+  
+.stage h2 {
+    font-size: 2vw;
+    font-family: 'Open Sans', sans-serif;
+    text-align: start;
+    line-height: 2.5vw;
+    letter-spacing: 0.2vw;
+}
+  
+.stage p {
+    font-size: 1vw;
+    line-height: 1.5;
+    text-align: start;
+    font-family: 'Open Sans', sans-serif;
+    max-width: 70%;
+    line-height: 1.5vw;
+    letter-spacing: 0.1vw;
+}
+  
+  /* Большая цифра */
+.stage-number {
+    position: absolute; /* Абсолютное позиционирование */
+    bottom: -0.5vw; /* Без отступа от нижнего края */
+    right: +1vw;  /* Без отступа от правого края */
+    font-size: 18vw;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.1); /* Полупрозрачный текст */
+    font-family: 'Open Sans', sans-serif;
+}
+
+@media (max-width: 1024px) {
+    .stages-container {
+        margin-top: 6vw;
+    }
+    /* Изменение сетки с 3 колонок на 2 */
+    .stages {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Убираем левый бордер у первого столбца (в том числе и у 5-го элемента) */
+    .stage:nth-child(odd) {
+        border-left: none;
+    }
+
+    /* Убираем правый бордер у второго столбца */
+    .stage:nth-child(even) {
+        border-right: none;
+    }
+
+    /* Убираем дополнительные отступы и рамки */
+    .stage:nth-child(2),
+    .stage:nth-child(3),
+    .stage:nth-child(5),
+    .stage:nth-child(6) {
+        padding-left: 0; /* Отступ справа */
+    }
+
+    /* Убираем нижнюю рамку у нижнего ряда */
+    .stage:nth-child(n+4) {
+        border-bottom: none;
+    }
+
+    .stage:nth-child(3) {
+        border-right: solid 1px white;
+        border-top: solid 1px white;
+    }
+
+    .stage:nth-child(4) {
+        border-bottom: solid 1px white;
+        border-left: solid 1px white;
+    }
+
+    .stage:nth-child(2),
+    .stage:nth-child(4),
+    .stage:nth-child(6) {
+        padding-left: 5vw;
+    }
+
+    .stage {
+        padding-top: 7vw;
+    }
+    
+    .stage__text {
+        gap: 4vw; /* Отступ между картинкой и текстом */
+        margin-bottom: 3vw;
+    }
+
+    .stage img {
+        height: 8vw;
+        width: auto;
+    }
+      
+    .stage h2 {
+        font-size: 3vw;
+        line-height: 4vw;
+        letter-spacing: 0.3vw;
+    }
+      
+    .stage p {
+        font-size: 2vw;
+        max-width: 70%;
+        line-height: 3vw;
+        letter-spacing: 0.1vw;
+    }
+      
+      /* Большая цифра */
+    .stage-number {
+        font-size: 30vw;
+    }
+
+    @media (max-width: 480px) {
+        .stages-container {
+            margin-top: 8vw;
+        }
+
+        h1 {
+            font-size: 4.5vw;
+        }
+
+        .stage {
+            padding-top: 15vw;
+        }
+        
+        .stage__text {
+            gap: 2vw; /* Отступ между картинкой и текстом */
+            margin-bottom: 3vw;
+        }
+
+        .stage img {
+            height: 9vw;
+            width: auto;
+        }
+          
+        .stage h2 {
+            font-size: 4vw;
+            line-height: 4vw;
+            letter-spacing: 0.3vw;
+        }
+          
+        .stage p {
+            max-width: 80%;
+            margin-top: 10vw;
+            font-size: 2.5vw;
+            line-height: 4vw;
+            letter-spacing: 0.1vw;
+        }
+          
+          /* Большая цифра */
+        .stage-number {
+            bottom: -0.5vw; /* Без отступа от нижнего края */
+            right: +1vw;  /* Без отступа от правого края */
+            font-size: 50vw;
+        }
+    }
+}
+
+
+
+
+
+
+footer {
+    z-index: 10;
+    bottom: 2.5vw;
+}
+
+.footerRennovations {
+    position: relative;
+    z-index: 10;
+    bottom: 0;
+}
+
+.footerTeam {
+    position: relative;
+    bottom: 0;
+    margin-top: 2.5vw;
+}
+
+.socialMedias img {
+    height: 2vw;
+    width: auto;
+    margin-right: 1.5vw;
+}
+
+/* Стили для модального окна */
+/* Стили для модального окна */
+.modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 2vw;
+    border-radius: 1vw;
+    width: 40vw; /* Увеличим ширину для лучшего отображения */
+    position: relative;
+    text-align: center;
+    box-sizing: border-box; /* Чтобы padding не увеличивал общий размер */
+}
+
+.modal-content form input,
+.modal-content form textarea {
+    width: 100%;
+    padding: 1vw;
+    margin: 1vw 0;
+    border: 1px solid #ccc;
+    border-radius: 1vw;
+    font-size: 1vw;
+    box-sizing: border-box; /* Это важно! */
+}
+
+.modal-content form button {
+    margin-top: 0.2vw;
+    padding: 0.8vw 3vw;
+    background-color: #FF9900;
+    border: none;
+    border-radius: 1vw;
+    color: white;
+    font-size: 0.8vw;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    letter-spacing: 0.1em;
+}
+
+.modal-content form button:hover {
+    background-color: #cc7a00;
+}
+
+/* Стили для крестика под кнопкой Submit */
+.modal-content .close {
+    display: block;
+    margin: 0.2vw auto 0; /* Отступ сверху после кнопки */
+    font-size: 2.5vw;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+}
+
+@media (max-width: 1024px) {
+    .socialMedias img {
+        height: 3vw;
+        width: auto;
+        margin-right: 2.5vw;
+    }
+
+    .modal-content {
+        width: 50vw;
+    }
+
+    .modal-content form input,
+    .modal-content form textarea {
+        width: 100%;
+        padding: 1.5vw;
+        margin: 1.5vw 0;
+        border: 1px solid #ccc;
+        border-radius: 2vw;
+        font-size: 2vw;
+        box-sizing: border-box; /* Это важно! */
+    }
+
+    .modal-content form button {
+        margin-top: 1vw;
+        padding: 1.5vw 5vw;
+        background-color: #FF9900;
+        border: none;
+        border-radius: 2vw;
+        color: white;
+        font-size: 1.5vw;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        letter-spacing: 0.1em;
+    }
+
+    .modal-content .close {
+        display: block;
+        margin: 1vw auto 0; /* Отступ сверху после кнопки */
+        font-size: 4vw;
+        color: black;
+        cursor: pointer;
+        text-align: center;
+        font-weight: bold;
+    }
+}
+
+@media (max-width: 480px) {
+    .socialMedias img {
+        height: 4vw;
+        width: auto;
+        margin-right: 3vw;
+    }
+
+    .modal-content {
+        width: 70vw;
+    }
+
+    .modal-content form input,
+    .modal-content form textarea {
+        width: 100%;
+        padding: 2vw;
+        margin: 2vw 0;
+        border: 1px solid #ccc;
+        border-radius: 2.5vw;
+        font-size: 2.5vw;
+        box-sizing: border-box; /* Это важно! */
+    }
+
+    .modal-content form button {
+        margin-top: 2vw;
+        padding: 2vw 7vw;
+        background-color: #FF9900;
+        border: none;
+        border-radius: 3vw;
+        color: white;
+        font-size: 2vw;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        letter-spacing: 0.1em;
+    }
+
+    .modal-content .close {
+        display: block;
+        margin: 2vw auto 0; /* Отступ сверху после кнопки */
+        font-size: 5vw;
+        color: black;
+        cursor: pointer;
+        text-align: center;
+        font-weight: bold;
+    }
+}
+

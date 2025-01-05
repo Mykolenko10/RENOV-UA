@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper index__wrapper">
+        <header>
+            <nav>
+                <a href="index.html" class="logo active"><img src="../img/logo.svg" alt="#"></a>
+                <a href="about.html" class="about">ABOUT</a>
+                <a href="rennovations.html" class="rennovation">RENNOVATION</a>
+                <div class="requestForACall" onclick="openModal()">REQUEST FOR A CALL</div>
+                <a href="stageOfWork.html" class="stagesOfWork">STAGES OF WORK</a>
+                <a href="contact.html" class="contact">CONTACT</a>
+                <a href="team.html" class="team">TEAM</a>
+                <div class="hamburger-menu" onclick="toggleMenu()">
+                    <div class="bar bar1"></div>
+                    <div class="bar bar2"></div>
+                    <div class="bar bar3"></div>
+                </div>
+            </nav>
+        </header>
+        <div class="side-menu">
+            <div class="close-menu" onclick="toggleMenu()">
+                <span class="close-line close-line-1"></span> <!-- Первая линия крестика -->
+                <span class="close-line close-line-2"></span> <!-- Вторая линия крестика -->
+            </div>
+            <div class="side-nav">
+                <a href="index.html">ABOUT</a>
+                <a href="rennovations.html">RENNOVATION</a>
+                <a href="stageOfWork.html">STAGES OF WORK</a>
+                <a href="contact.html">CONTACT</a>
+                <a href="team.html">TEAM</a>
+            </div>
+        </div>
+        <main class="index__main">
+            <div class="indexSlogan">CRAFRING COMFORT <br> CREATING STYLE</div>
+        </main>
+        <footer>
+            <div class="socialMedias">
+                <img src="../img/youtube.svg" alt="#">
+                <img src="../img/instagram.svg" alt="#">
+                <img src="../img/facebook.svg" alt="#">
+                <img src="../img/telegram.svg" alt="#">
+            </div>
+        </footer>
+        <div class="modal">
+            <div class="modal-content">
+                <form>
+                    <input type="firstName" placeholder="First name:" required>
+                    <input type="lastName" placeholder="Last name:" required>
+                    <input type="tel" placeholder="Phone number:" required>
+                    <input type="email" placeholder="Email:" required>
+                    <input type="tel" placeholder="Address:" required>
+                    <button type="submit">SUBMIT</button>
+                </form>
+                <div class="close">×</div> <!-- Крестик под кнопкой -->
+            </div>
+        </div>
+    </div>
+    <script src="../script.js" ></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper about__wrapper">
+        <header>
+            <nav>
+                <a href="index.html" class="logo active"><img src="../img/logo.svg" alt="#"></a>
+                <a href="about.html" class="about">ABOUT</a>
+                <a href="rennovations.html" class="rennovation">RENNOVATION</a>
+                <div class="requestForACall" onclick="openModal()">REQUEST FOR A CALL</div>
+                <a href="stageOfWork.html" class="stagesOfWork">STAGES OF WORK</a>
+                <a href="contact.html" class="contact">CONTACT</a>
+                <a href="team.html" class="team">TEAM</a>
+                <div class="hamburger-menu" onclick="toggleMenu()">
+                    <div class="bar bar1"></div>
+                    <div class="bar bar2"></div>
+                    <div class="bar bar3"></div>
+                </div>
+            </nav>
+        </header>
+        <div class="side-menu">
+            <div class="close-menu" onclick="toggleMenu()">
+                <span class="line line-1"></span>
+                <span class="line line-2"></span>
+            </div>
+            <div class="side-menu">
+                <div class="close-menu" onclick="toggleMenu()">
+                    <span class="close-line close-line-1"></span> <!-- Первая линия крестика -->
+                    <span class="close-line close-line-2"></span> <!-- Вторая линия крестика -->
+                </div>
+                <div class="side-nav">
+                    <a href="index.html">ABOUT</a>
+                    <a href="rennovations.html">RENNOVATION</a>
+                    <a href="stageOfWork.html">STAGES OF WORK</a>
+                    <a href="contact.html">CONTACT</a>
+                    <a href="team.html">TEAM</a>
+                </div>
+            </div>
+        </div>
+        <main  class="about__main">
+            <div class="aboutText">
+                <div class="aboutSlogan"><span class="aboutSlogan__white">Nice renovation?</span> <br> <span    class="aboutSlogan__orange">Let's do it!</span>
+                </div>
+                <div class="aboutDiscription">We are a home renovation company based in Ukraine. We have been in business for over 5 years.  Our team consists of skilled professionals who are experts in their field. We work very efficiently and have received    numerous positive reviews.
+                </div>
+            </div>
+            <div class="about__img">
+                <img id="aboutImg" src="../img/Group 2.png" alt="">
+            </div>
+        </main>
+        <footer>
+            <div class="socialMedias about__socialMedias">
+                <img src="../img/youtube.svg" alt="#">
+                <img src="../img/instagram.svg" alt="#">
+                <img src="../img/facebook.svg" alt="#">
+                <img src="../img/telegram.svg" alt="#">
+            </div>
+        </footer>
+    </div>
+    <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper team__wrapper">
+        <header>
+            <nav>
+                <a href="index.html" class="logo active"><img src="../img/logo.svg" alt="#"></a>
+                <a href="about.html" class="about">ABOUT</a>
+                <a href="rennovations.html" class="rennovation">RENNOVATION</a>
+                <div class="requestForACall" onclick="openModal()">REQUEST FOR A CALL</div>
+                <a href="stageOfWork.html" class="stagesOfWork">STAGES OF WORK</a>
+                <a href="contact.html" class="contact">CONTACT</a>
+                <a href="team.html" class="team">TEAM</a>
+                <div class="hamburger-menu" onclick="toggleMenu()">
+                    <div class="bar bar1"></div>
+                    <div class="bar bar2"></div>
+                    <div class="bar bar3"></div>
+                </div>
+            </nav>
+        </header>
+        <div class="side-menu">
+            <div class="close-menu" onclick="toggleMenu()">
+                <span class="close-line close-line-1"></span> <!-- Первая линия крестика -->
+                <span class="close-line close-line-2"></span> <!-- Вторая линия крестика -->
+            </div>
+            <div class="side-nav">
+                <a href="index.html">ABOUT</a>
+                <a href="rennovations.html">RENNOVATION</a>
+                <a href="stageOfWork.html">STAGES OF WORK</a>
+                <a href="contact.html">CONTACT</a>
+                <a href="team.html">TEAM</a>
+            </div>
+        </div>
+        <main class="team__main">
+            <h1>OUR TEAM</h1>
+            <p>
+                Our company has been operating for 5 years.
+                We specialize in home renovation, design and implementation.
+                We have a team of 49 professionals who will be happy to help
+                you achieve the renovation of your dreams.
+            </p>
+            <div class="team-cards">
+                <div class="team-member">
+                    <img src="../img/15569.jpg" alt="Joseph Harrison">
+                    <h3>Joseph Harrison</h3>
+                    <p>Office Manager</p>
+                </div>
+                <div class="team-member owner">
+                    <img src="../img/27455 1.jpg" alt="Mike Martinez">
+                    <h3>Mike Martinez</h3>
+                    <p>Owner</p>
+                </div>
+                <div class="team-member">
+                    <img src="../img/12033.jpg" alt="Sergio Luka">
+                    <h3>Sergio Luka</h3>
+                    <p>Coordinator</p>
+                </div>
+                <div class="team-member">
+                    <img src="../img/smiling-woman-sweater-stylish-eyewear-with-straight-blonde-hair-pointing-blank-white-wall-demonstrating-something-cheerful-female-indicating-with-fore-finger-gray-background.jpg" alt="Ana Molina">
+                    <h3>Ana Molina</h3>
+                    <p>Marketing</p>
+                </div>
+                <div class="team-member">
+                    <img src="../img/13210.jpg" alt="Sasha Molina">
+                    <h3>Sasha Molina</h3>
+                    <p>Office Manager</p>
+                </div>
+                <div class="team-member">
+                    <img src="../img/confused-shocked-guy-raising-eyebrows-standing-stupor 1.jpg" alt="Misha Williams">
+                    <h3>Misha Williams</h3>
+                    <p>Chief Designer</p>
+                </div>
+                <div class="team-member">
+                    <img src="../img/20637 1.jpg" alt="Lina Jones">
+                    <h3>Lina Jones</h3>
+                    <p>Technician</p>
+                </div>
+                <div class="team-member">
+                    <img src="../img/12083.jpg" alt="Alex Menro">
+                    <h3>Alex Menro</h3>
+                    <p>Technician</p>
+                </div>
+                <div class="team-member">
+                    <img src="../img/portrait-young-happy-beautiful-girl-smiling-with-arms-akimbo 1.jpg" alt="Eliza Miller">
+                    <h3>Eliza Miller</h3>
+                    <p>Technician</p>
+                </div>
+            </div>
+        </main>
+        <footer class="footerTeam">
+            <div class="socialMedias">
+                <img src="../img/youtube.svg" alt="#">
+                <img src="../img/instagram.svg" alt="#">
+                <img src="../img/facebook.svg" alt="#">
+                <img src="../img/telegram.svg" alt="#">
+            </div>
+        </footer>
+        <div class="modal">
+            <div class="modal-content">
+                <form>
+                    <input type="firstName" placeholder="First name:" required>
+                    <input type="lastName" placeholder="Last name:" required>
+                    <input type="tel" placeholder="Phone number:" required>
+                    <input type="email" placeholder="Email:" required>
+                    <input type="tel" placeholder="Address:" required>
+                    <button type="submit">SUBMIT</button>
+                </form>
+                <div class="close">×</div> <!-- Крестик под кнопкой -->
+            </div>
+        </div>
+    </div>
+    <script src="../script.js" ></script>
+</body>
+</html>
